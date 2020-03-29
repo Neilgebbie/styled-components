@@ -74,7 +74,7 @@ export class TextTag implements Tag {
 
   insertRule(index: number, rule: string): boolean {
     if (index <= this.length && index >= 0) {
-      const node = document.createTextNode(rule);
+      const node = document.createTextNode('#smarterly-widget ' + rule);
       const refNode = this.nodes[index];
       this.element.insertBefore(node, refNode || null);
       this.length++;
